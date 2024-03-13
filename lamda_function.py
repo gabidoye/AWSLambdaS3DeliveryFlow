@@ -15,15 +15,15 @@ def lambda_handler(event, context):
     target_file_key = f'{today}-processed.json'
 
     # TODO implement
-    print(event)
+ 
     try:
         bucket_name = event["Records"][0]["s3"]["bucket"]["name"]
         s3_file_key = event["Records"][0]["s3"]["object"]["key"]
 
         resp = s3_client.get_object(Bucket=bucket_name, Key=s3_file_key)
-        print(resp['Body'])
+        # print(resp['Body'])
         df_s3_data = pd.read_json(resp['Body'])
-        print(df_s3_data.head().to_json(orient='records', lines=True))
+        # print(df_s3_data.head().to_json(orient='records', lines=True))
 
         filtered_data = df_s3_data.loc[df_s3_data['status'] == "delivered"]
 
