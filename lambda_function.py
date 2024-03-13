@@ -21,7 +21,7 @@ def lambda_handler(event, context):
         s3_file_key = event["Records"][0]["s3"]["object"]["key"]
 
         resp = s3_client.get_object(Bucket=bucket_name, Key=s3_file_key)
-        # print(resp['Body'])
+      
         df_s3_data = pd.read_json(resp['Body'])
         # print(df_s3_data.head().to_json(orient='records', lines=True))
 
