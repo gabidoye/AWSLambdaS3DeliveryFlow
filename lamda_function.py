@@ -1,26 +1,25 @@
 import boto3
 import pandas as pd
 from datetime import datetime
+import os
 
 s3_client = boto3.client('s3')
 sns_client = boto3.client('sns')
-sns_arn = ''
-
+sns_arn = os.getenv('SNS_ARN')  
+target_bucket_name = os.getenv('TARGET_BUCKET_NAME')
 
 
 def lambda_handler(event, context):
     # Format today's date
-    today = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     target_file_key = f'{today}-processed.json'
-    target_bucket_name = 'doordash-gold-zn'
 
     # TODO implement
     print(event)
     try:
         bucket_name = event["Records"][0]["s3"]["bucket"]["name"]
         s3_file_key = event["Records"][0]["s3"]["object"]["key"]
-        print(bucket_name)
-        print(s3_file_key)
+
         resp = s3_client.get_object(Bucket=bucket_name, Key=s3_file_key)
         print(resp['Body'])
         df_s3_data = pd.read_json(resp['Body'])
