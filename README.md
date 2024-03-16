@@ -32,6 +32,9 @@ IAM Role Creation: Set up an IAM role with permissions tailored for reading from
 AWS Lambda Configuration: Deploy a Python-based Lambda function with pandas. It triggers on file uploads to doordash-bronze-zn, filters records with "delivered" status, and writes the output to doordash-gold-zn.
 CI/CD with AWS CodeBuild: Link your GitHub repository containing the Lambda function code to AWS CodeBuild. Automate deployments using buildspec.yml.
 
+<img width="1187" alt="image" src="https://github.com/gabidoye/AWSLambdaS3DeliveryFlow/assets/86935340/d164172f-9edf-498c-8e77-0b6c9a7c0efc">
+
+
 ## Testing & Verification: 
 Upload a sample JSON to doordash-bronze-zn to trigger the Lambda function. Verify the processed file in doordash-gold-zn and check for the email notification confirming the process completion.
 
