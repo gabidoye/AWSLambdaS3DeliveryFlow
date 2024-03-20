@@ -33,7 +33,9 @@ AWS Lambda Configuration: Deploy a Python-based Lambda function with pandas. It 
 CI/CD with AWS CodeBuild: Link your GitHub repository containing the Lambda function code to AWS CodeBuild. Automate deployments using buildspec.yml.
 
 
-<img width="1187" alt="image" src="https://github.com/gabidoye/AWSLambdaS3DeliveryFlow/assets/86935340/9a08f6d8-b4ef-4b72-9468-deb1bf42c857">
+<img width="1173" alt="image" src="https://github.com/gabidoye/AWSLambdaS3DeliveryFlow/assets/86935340/9d212a09-b7c9-419d-a8f0-1b66e644361b">
+
+
 
 
 ## Testing & Verification: 
